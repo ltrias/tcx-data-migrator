@@ -1,13 +1,15 @@
 import sys
 import os
 
+
 def valid_parameters(param):
     result = True
 
     if len(param) < 3:
-        result = False 
-        
-    return result
+        result = False
+
+        return result
+
 
 def print_usage():
     message = """
@@ -17,21 +19,24 @@ def print_usage():
         <metric>: metric to migrate, defaults to HR (heart rate)
     """
 
-    print(message.replace("+script_name+", os.path.basename(__file__) ))
+    print(message.replace("+script_name+", os.path.basename(__file__)))
 
-def print_header(): 
+
+def print_header():
     message = """TCX Data Migrator by Lucas Trias - github.com/ltrias
     Allows to merge data from a tcx file into another one
     For instance, merge Polar chest strap heart rate data into Garmin watch tracked activity"""
 
     print(message)
 
+
 def main():
     print_header()
-    
+
     if not valid_parameters(sys.argv):
         print_usage()
         return
-    
+
+
 if __name__ == '__main__':
     main()
