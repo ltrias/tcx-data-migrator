@@ -13,7 +13,8 @@ def print_usage():
 
 
 def print_header():
-    message = """TCX Data Migrator by Lucas Trias - github.com/ltrias
+    message = """
+    TCX Data Migrator by Lucas Trias - github.com/ltrias
     Allows to merge data from a tcx file into another one
     For instance, merge Polar chest strap heart rate data into Garmin watch tracked activity"""
 
