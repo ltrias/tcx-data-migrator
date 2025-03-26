@@ -21,7 +21,9 @@ def main():
     src_file = TCXFile.TCXFile(sys.argv[1])
     dst_file = TCXFile.TCXFile(sys.argv[2])
 
-    
+    src_file.save(sys.argv[1].replace('.tcx', '_out.tcx'))
+    dst_file.save(sys.argv[2].replace('.tcx', '_out.tcx'))
+
 
 if __name__ == '__main__':
     main()

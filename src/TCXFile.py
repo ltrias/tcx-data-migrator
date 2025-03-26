@@ -17,7 +17,12 @@ class TCXFile:
     def save(self, filename=None):
         if filename is None:
             filename = self.filename
-        pass
+        
+        try:
+            self.tree.write(filename, encoding="UTF-8", xml_declaration=True)
+            print("Saving " + filename)
+        except:
+            print("Cannot save " + filename)
 
     def __str__(self):
         return __name__ + " Base: " + self.filename
