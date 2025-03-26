@@ -19,7 +19,9 @@ def main():
         messages.print_usage()
         return
     src_file = TCXFile.TCXFile(sys.argv[1])
+    dst_file = TCXFile.TCXFile(sys.argv[2])
 
+    
 
 if __name__ == '__main__':
     main()
