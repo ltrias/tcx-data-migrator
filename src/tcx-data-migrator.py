@@ -1,6 +1,7 @@
 import sys
 import messages
 import TCXFile
+from strategies import DataMigrationContext
 
 
 def valid_parameters(param):
@@ -20,6 +21,9 @@ def main():
         return
     src_file = TCXFile.TCXFile(sys.argv[1])
     dst_file = TCXFile.TCXFile(sys.argv[2])
+
+    ctx = DataMigrationContext(src_file, dst_file, None)
+    ctx.migrate()
 
     src_file.save(sys.argv[1].replace('.tcx', '_out.tcx'))
     dst_file.save(sys.argv[2].replace('.tcx', '_out.tcx'))
