@@ -1,5 +1,7 @@
+
 from abc import ABC, abstractmethod
-from src import TCXFile
+
+from .tcx import tcxfile
 
 class SamplingStrategy(ABC):
 
@@ -9,7 +11,7 @@ class SamplingStrategy(ABC):
 
 
 class DataMigrationContext:
-    def __init__(self, src: TCXFile, dst: TCXFile, metric):
+    def __init__(self, src: tcxfile.TCXFile, dst: tcxfile.TCXFile, sampling_strategy: SamplingStrategy = None, metric = None):
         self._src = src
         self._dst = dst
         self._metric = metric if metric is not None else 'HR'
