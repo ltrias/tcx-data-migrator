@@ -16,7 +16,7 @@ class DataMigrationContext:
         self._dst = dst
         self._metric = metric if metric is not None else 'HR'
 
-        # improve flexibility to other samplin techniques here
+        # improve flexibility to other sampling techniques here
         self._strategy = TrackpointIndexStrategy()
 
     def migrate(self):
