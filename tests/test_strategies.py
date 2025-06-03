@@ -9,9 +9,9 @@ class TestTrackpointIndexStrategy(unittest.TestCase):
 
 
     def testDefaultArguments(self):
-        pass
-        subject = strategies.DataMigrationContext(src=None, dst=None, metric=None)
+        subject = strategies.DataMigrationContext(None, None) 
         self.assertEqual('HR', subject._metric)
+        self.assertIsInstance(subject._strategy, strategies.TrackpointIndexStrategy)
 
     def test_same_number_of_samples(self):
         self.fail()
