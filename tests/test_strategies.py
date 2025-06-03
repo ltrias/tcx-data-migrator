@@ -21,9 +21,3 @@ class TestTrackpointIndexStrategy(unittest.TestCase):
 
     def test_src_has_less_samples(self):
         self.fail()
-
-
-
-
-if __name__ == '__main__':
-    unittest.main()
