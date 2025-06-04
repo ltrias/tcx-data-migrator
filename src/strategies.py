@@ -1,12 +1,13 @@
 
 from abc import ABC, abstractmethod
+from typing import List
 
 from .tcx import tcxfile
 
 class SamplingStrategy(ABC):
 
     @abstractmethod
-    def migrate(self, src, dst):
+    def migrate(self, src, dst) -> List:
         pass
 
 
@@ -34,12 +35,13 @@ class DataMigrationContext:
 
 
 class TrackpointIndexStrategy(SamplingStrategy):
-    def migrate(self, src, dst):
+    def migrate(self, src, dst) -> List:
         print("Migrating with " + str(__class__))
 
-        if len(src) > len(dst):
-            dst = src[:len(dst)]
+        if len(src) >= len(dst):
+            return src[:len(dst)]
         else:
-            pass
+            r =  src + dst[len(src):]
+            return r
 
         print("HR Samples - src: " + str(len(src)) + " dst: " + str(len(dst)))
